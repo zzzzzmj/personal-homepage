@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="赵明杰的个人履历、学习经历与技术方向。"><title>关于我 · 赵明杰</title>
+  <meta name="description" content="个人信息、教育经历与获奖情况。"><title>个人信息</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
 </head>
 <body class="detail-page">
@@ -10,18 +10,18 @@
   <div class="page-shell">
     <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">ZM.</span><span>PORTFOLIO / 2026</span></a><nav class="nav" aria-label="主导航"><a href="index.html#projects">项目</a><a href="about.html" aria-current="page">关于</a><a href="algorithms.html">算法</a></nav><a class="nav-cta" href="#" data-placeholder>联系我 ↗</a></header>
     <main id="main">
-      <section class="about-hero"><div class="portrait large"><span class="portrait-grid"></span><strong>ZM</strong><i></i></div><div><p class="eyebrow">ABOUT / 个人履历</p><h1>赵明杰</h1><p>用 Go 构建可靠系统，也用文字整理思考。</p></div></section>
+      <section class="about-hero"><div class="portrait large"><span class="portrait-grid"></span><strong>ME</strong><i></i></div><div><p class="eyebrow">ABOUT / 个人信息</p><h1 data-config="profile.name">姓名</h1><p data-config="profile.direction">个人方向</p></div></section>
       <section class="about-layout">
         <div class="about-main">
-          <p class="section-label">// BIOGRAPHY</p><h2>关注后端工程与工业网络安全。</h2><p class="large-copy">目前是东北大学谛听网络安全实验室成员。我正在通过真实项目积累事件驱动架构、检测引擎、可观察性与安全工程方面的实践，同时持续完成 LeetCode Hot 100 的 Go 语言图解。</p>
-          <div class="resume-block"><p class="section-label">// EDUCATION</p><a href="#" data-placeholder><b>本科院校</b><span>请补充学校名称、专业与时间</span><i>添加信息 ＋</i></a><a href="#" data-placeholder><b>研究生院校</b><span>请补充学校名称、方向与时间</span><i>添加信息 ＋</i></a></div>
+          <p class="section-label">// BIOGRAPHY</p><h2>个人简介</h2><p class="large-copy">请在 <code>dist/site.config.js</code> 中填写你的姓名、方向、教育经历、联系方式与获奖信息。</p>
+          <div class="resume-block"><p class="section-label">// EDUCATION</p><a href="#" data-placeholder><b data-config="profile.undergraduateSchool">本科院校</b><span>专业与时间</span><i>填写信息 ＋</i></a><a href="#" data-placeholder><b data-config="profile.graduateSchool">研究生院校</b><span>方向与时间</span><i>填写信息 ＋</i></a></div>
           <div class="resume-block"><p class="section-label">// HONORS</p><div class="empty-state"><b>奖项信息待补充</b><p>建议填写 3–5 项最能体现能力的竞赛、奖学金或荣誉，并附上年份与排名。</p></div></div>
         </div>
-        <aside class="about-aside"><p class="section-label">// NOW</p><div class="aside-item"><span>方向</span><b>Go 后端开发<br>工业互联网安全</b></div><div class="aside-item"><span>技术栈</span><b>Go · Hertz · NATS<br>MySQL · Docker</b></div><div class="aside-item"><span>当前计划</span><b>LeetCode Hot 100<br>图解连载</b></div><a class="outline-button" href="https://github.com/NEU-DitingLab/go-ditecting" target="_blank" rel="noreferrer">GitHub 项目 <span>↗</span></a></aside>
+        <aside class="about-aside"><p class="section-label">// PROFILE</p><div class="aside-item"><span>姓名</span><b data-config="profile.name">待填写</b></div><div class="aside-item"><span>方向</span><b data-config="profile.direction">待填写</b></div><div class="aside-item"><span>邮箱</span><b data-config="profile.email">待填写</b></div></aside>
       </section>
     </main>
     <footer class="footer"><div><span class="brand-mark">ZM.</span><p>持续构建，持续记录。</p></div><p>© <span data-year></span> 赵明杰</p><a href="index.html">返回首页 ↑</a></footer>
   </div>
-  <div class="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+  <div class="toast" role="status" aria-live="polite"></div><script src="site.config.js"></script><script src="app.js"></script>
 </body>
 </html>

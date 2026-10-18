@@ -1,0 +1,133 @@
+:root {
+  --ink: #203348;
+  --accent: #426f97;
+  --line: rgba(32, 51, 72, .32);
+  --glass: rgba(255, 255, 255, .46);
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; min-height: 100%; }
+body { margin: 0; color: var(--ink); font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+.skip-link {
+  position: fixed;
+  z-index: 20;
+  left: 18px;
+  top: -70px;
+  padding: 10px 14px;
+  color: white;
+  background: var(--ink);
+  transition: top .2s;
+}
+.skip-link:focus { top: 18px; }
+
+.cover {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: url("assets/images/hero-landscape.png") center center / cover no-repeat;
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(248, 252, 255, .18), rgba(232, 242, 249, .32));
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  width: min(720px, calc(100% - 36px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 46px 52px 50px;
+  border: 1px solid rgba(255, 255, 255, .62);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .38);
+  box-shadow: 0 24px 70px rgba(63, 88, 108, .16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: enter .7s ease both;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.avatar {
+  width: 116px;
+  height: 116px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, .86);
+  border-radius: 50%;
+  background: rgba(224, 236, 245, .72);
+  box-shadow: 0 10px 30px rgba(45, 72, 94, .16);
+}
+.avatar svg { width: 78%; height: 78%; }
+.avatar circle, .avatar path { fill: #93abc0; }
+
+h1 {
+  margin: 27px 0 0;
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: .07em;
+  text-indent: .07em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .72);
+}
+
+.divider {
+  width: 82px;
+  height: 1px;
+  margin: 28px 0 30px;
+  background: var(--line);
+}
+
+.primary-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.primary-navigation a {
+  min-width: 126px;
+  padding: 11px 22px;
+  border: 1px solid rgba(32, 51, 72, .42);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .18);
+  text-align: center;
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.primary-navigation a:hover,
+.primary-navigation a:focus-visible {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .cover-content { padding: 38px 22px 42px; }
+  .avatar { width: 96px; height: 96px; }
+  h1 { margin-top: 23px; font-size: 2.35rem; }
+  .divider { margin: 24px 0; }
+  .primary-navigation { width: 100%; flex-direction: column; gap: 10px; }
+  .primary-navigation a { width: min(280px, 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

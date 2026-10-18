@@ -1,4 +1,12 @@
 (() => {
+  const config = window.PORTFOLIO_CONFIG || {};
+  document.querySelectorAll('[data-config]').forEach((node) => {
+    const value = node.dataset.config
+      .split('.')
+      .reduce((current, key) => current && current[key], config);
+    if (typeof value === 'string' && value.trim()) node.textContent = value;
+  });
+
   document.querySelectorAll('[data-year]').forEach((node) => {
     node.textContent = new Date().getFullYear();
   });
