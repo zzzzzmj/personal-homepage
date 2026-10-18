@@ -52,4 +52,12 @@
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
   }
+
+  document.querySelectorAll('.home-entry').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+      card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+    });
+  });
 })();
