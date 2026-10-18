@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Go-Ditecting 工业控制网络安全监测平台项目档案。">
+  <title>Go-Ditecting · 项目档案</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="detail-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-mark">ZM.</span><span>PORTFOLIO / 2026</span></a>
+      <nav class="nav" aria-label="主导航"><a href="index.html#projects">项目</a><a href="about.html">关于</a><a href="algorithms.html">算法</a></nav>
+      <a class="nav-cta" href="https://github.com/NEU-DitingLab/go-ditecting" target="_blank" rel="noreferrer">SOURCE ↗</a>
+    </header>
+    <main id="main">
+      <section class="case-hero">
+        <div class="case-meta"><span>PROJECT / 001</span><span>2026</span></div>
+        <p class="eyebrow">INDUSTRIAL CYBERSECURITY × GO</p>
+        <h1>Go-Ditecting</h1>
+        <p class="case-lede">面向工业控制网络的安全监测、异常检测与告警处置平台。</p>
+        <div class="case-actions"><a class="solid-button" href="https://github.com/NEU-DitingLab/go-ditecting" target="_blank" rel="noreferrer">查看 GitHub <span>↗</span></a><a class="outline-button" href="#architecture">阅读架构 <span>↓</span></a></div>
+        <div class="case-stats">
+          <div><b>05</b><span>内置检测规则</span></div><div><b>03</b><span>可独立运行入口</span></div><div><b>02</b><span>本地 / 分布式模式</span></div><div><b>15 min</b><span>告警聚合窗口</span></div>
+        </div>
+      </section>
+
+      <section class="architecture-section" id="architecture">
+        <div class="section-heading"><p class="section-label">// SYSTEM ARCHITECTURE</p><h2>一条安全事件，<br>如何变成可处置的告警？</h2></div>
+        <div class="architecture-board">
+          <div class="arch-lane">
+            <span class="lane-label">EDGE</span>
+            <div class="arch-node"><i>01</i><b>工业设备</b><small>PLC · HMI · SCADA</small></div>
+          </div>
+          <div class="arch-arrow"><span>JSON EVENT</span>→</div>
+          <div class="arch-lane accent-lane">
+            <span class="lane-label">INGEST</span>
+            <div class="arch-node"><i>02</i><b>Hertz API</b><small>认证 · 校验 · 接入</small></div>
+          </div>
+          <div class="arch-arrow"><span>ics.events</span>→</div>
+          <div class="arch-lane">
+            <span class="lane-label">ASYNC</span>
+            <div class="arch-node"><i>03</i><b>NATS</b><small>队列组 · 水平扩展</small></div>
+          </div>
+          <div class="arch-arrow"><span>DETECT</span>→</div>
+          <div class="arch-lane dark-lane">
+            <span class="lane-label">CORE</span>
+            <div class="arch-node"><i>04</i><b>Rule Engine</b><small>检测 · 聚合 · 处置</small></div>
+          </div>
+        </div>
+        <p class="architecture-note">Detector 实例加入同一队列组；稳定指纹将“规则 + 资产 + 来源”关联起来，在 15 分钟窗口内聚合重复事件，减少告警风暴。</p>
+      </section>
+
+      <section class="feature-grid-section">
+        <p class="section-label">// ENGINEERING DECISIONS</p>
+        <div class="feature-grid">
+          <article><span>01</span><h3>事件驱动解耦</h3><p>API 只负责可靠接入，检测器通过 NATS 异步消费；检测实例可独立水平扩容。</p></article>
+          <article><span>02</span><h3>领域规则内聚</h3><p>内置非法写入、异常时段、认证爆破、端口扫描与参数越界五类 ICS 规则。</p></article>
+          <article><span>03</span><h3>双模式运行</h3><p>单机内存模式用于快速演示；Docker Compose 组合 MySQL、NATS、Prometheus 与 Grafana。</p></article>
+          <article><span>04</span><h3>安全基线</h3><p>分析员令牌与采集密钥分离，配合输入校验、CORS 白名单及安全响应头。</p></article>
+        </div>
+      </section>
+
+      <section class="code-section">
+        <div><p class="section-label">// QUICK START</p><h2>60 秒启动<br>本地演示。</h2><p>无需安装 MySQL 或 NATS。内存模式会启动完整的接入、检测与告警链路。</p></div>
+        <div class="terminal" aria-label="启动命令">
+          <header><span></span><span></span><span></span><b>terminal</b></header>
+          <pre><code><em>$</em> git clone https://github.com/NEU-DitingLab/go-ditecting
+<em>$</em> cd go-ditecting
+<em>$</em> go run ./cmd/api
+
+<mark>✓ server listening on :8080</mark></code></pre>
+        </div>
+      </section>
+
+      <section class="next-section"><p>下一个阅读方向</p><a href="algorithms.html"><span>LeetCode Hot 100</span><b>用图解还原算法思路 →</b></a></section>
+    </main>
+    <footer class="footer"><div><span class="brand-mark">ZM.</span><p>持续构建，持续记录。</p></div><p>© <span data-year></span> 赵明杰</p><a href="index.html">返回首页 ↑</a></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
