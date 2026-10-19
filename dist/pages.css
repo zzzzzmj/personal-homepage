@@ -25,23 +25,9 @@
 .academic-header nav a::after { content: ""; position: absolute; right: 50%; bottom: 0; left: 50%; height: 2px; background: var(--blue); transition: left .2s, right .2s; }
 .academic-header nav a:hover::after, .academic-header nav a[aria-current="page"]::after { right: 0; left: 0; }
 
-.academic-banner { position: relative; isolation: isolate; overflow: hidden; color: white; background: linear-gradient(118deg, #102f56 0%, #1d4c83 52%, #3979b8 100%); }
-.banner-grid { position: absolute; z-index: -1; inset: 0; opacity: .13; background-image: linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(90deg, transparent, black 60%); }
-.banner-orb { position: absolute; z-index: -1; border: 1px solid rgba(255, 255, 255, .18); border-radius: 50%; }
-.orb-one { width: 360px; height: 360px; right: 7%; top: -190px; }
-.orb-two { width: 210px; height: 210px; right: 22%; bottom: -145px; box-shadow: 0 0 0 42px rgba(255,255,255,.035), 0 0 0 84px rgba(255,255,255,.025); }
-.academic-banner-inner { width: min(1200px, calc(100% - 44px)); min-height: 285px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.banner-kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 17px; color: rgba(255,255,255,.68); font-size: .68rem; font-weight: 700; letter-spacing: .16em; }
-.banner-kicker i { width: 24px; height: 1px; background: #74d8e9; }
-.academic-banner h1 { margin: 0; font-size: clamp(3.2rem, 6.5vw, 6.4rem); line-height: .92; letter-spacing: -.06em; }
-.banner-direction { margin: 22px 0 0; color: rgba(255,255,255,.75); font-size: 1rem; letter-spacing: .05em; }
-.banner-sign { position: relative; display: grid; width: 154px; height: 154px; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 16px rgba(255,255,255,.025); }
-.banner-sign span { font-size: 2.25rem; font-weight: 850; letter-spacing: -.08em; }
-.banner-sign i, .banner-sign b { position: absolute; border-radius: 50%; background: #7be2ef; box-shadow: 0 0 18px rgba(123,226,239,.75); }
-.banner-sign i { width: 9px; height: 9px; left: 10px; top: 44px; }
-.banner-sign b { width: 6px; height: 6px; right: 18px; bottom: 35px; background: #b7a8ff; }
+.academic-banner { display: none; }
 
-.academic-layout { width: min(1200px, calc(100% - 44px)); margin: 0 auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 38px; padding: 48px 0 105px; }
+.academic-layout { width: min(1200px, calc(100% - 44px)); margin: 0 auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 38px; padding: 36px 0 105px; }
 .profile-panel { align-self: start; position: sticky; top: 100px; overflow: hidden; border: 1px solid var(--line-soft); border-radius: 20px; background: white; box-shadow: 0 18px 55px rgba(37, 62, 93, .09); }
 .profile-photo { position: relative; overflow: hidden; }
 .profile-photo::after { content: ""; position: absolute; inset: 58% 0 0; background: linear-gradient(transparent, rgba(13, 38, 67, .34)); pointer-events: none; }
@@ -163,14 +149,10 @@
 }
 
 @media (max-width: 720px) {
-  .academic-header-inner, .academic-banner-inner, .academic-layout, .academic-footer { width: calc(100% - 28px); }
+  .academic-header-inner, .academic-layout, .academic-footer { width: calc(100% - 28px); }
   .academic-header nav a:first-child { display: none; }
   .academic-header nav { gap: 17px; }
-  .academic-banner-inner { min-height: 245px; }
-  .banner-sign { width: 105px; height: 105px; }
-  .banner-sign span { font-size: 1.55rem; }
-  .academic-banner h1 { font-size: 3.2rem; }
-  .academic-layout { padding-top: 28px; }
+  .academic-layout { padding-top: 24px; }
   .profile-panel { display: block; }
   .profile-photo img { min-height: 0; height: auto; }
   .profile-panel > img { height: auto; max-height: 520px; }
@@ -188,9 +170,6 @@
 @media (max-width: 460px) {
   .academic-brand b { display: none; }
   .academic-header nav a { font-size: .76rem; }
-  .academic-banner-inner { min-height: 225px; }
-  .banner-sign { display: none; }
-  .academic-banner h1 { font-size: 3rem; }
   .fact-grid { grid-template-columns: 1fr; }
   .education-card-head { align-items: flex-start; flex-direction: column; gap: 7px; }
   .honor-list li { grid-template-columns: 52px 1fr; }
