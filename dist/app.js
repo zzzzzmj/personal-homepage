@@ -17,6 +17,23 @@
     }
   });
 
+  const ageNode = document.querySelector('[data-profile-age]');
+  if (ageNode) {
+    const explicitAge = String(config.profile?.age || '').trim();
+    const birthday = String(config.profile?.birthday || '').trim();
+    if (explicitAge) {
+      ageNode.textContent = explicitAge;
+    } else if (/^\d{4}-\d{2}-\d{2}$/.test(birthday)) {
+      const birthDate = new Date(`${birthday}T00:00:00`);
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const birthdayPassed = today.getMonth() > birthDate.getMonth()
+        || (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+      if (!birthdayPassed) age -= 1;
+      if (Number.isFinite(age) && age >= 0) ageNode.textContent = `${age} 岁`;
+    }
+  }
+
   const awardList = document.querySelector('[data-awards]');
   if (awardList && Array.isArray(config.profile?.awards) && config.profile.awards.length) {
     awardList.replaceChildren(...config.profile.awards.map((award) => {
