@@ -14,13 +14,11 @@ personal-homepage/
 │   ├── index.html                # 首页
 │   ├── home.css                  # 首页样式
 │   ├── styles.css                # 详情页公共样式
-│   ├── pages.css                 # 个人信息页与算法目录样式
+│   ├── pages.css                 # 个人信息页样式
 │   ├── site.config.js            # 个人信息与首页文字配置
 │   ├── app.js                    # 公共交互
 │   ├── about.html                # 个人信息页
-│   ├── project-go-ditecting.html # 项目详情页
-│   ├── algorithms.html           # 算法目录
-│   └── algorithm-two-sum.html    # 算法文章示例
+│   └── project-go-ditecting.html # 项目详情页
 └── README.md
 ```
 
@@ -33,8 +31,7 @@ window.PORTFOLIO_CONFIG = {
   homepage: {
     title: "个人主页展示",
     projectLabel: "个人项目",
-    profileLabel: "个人信息",
-    algorithmLabel: "算法学习"
+    profileLabel: "个人信息"
   },
   profile: {
     name: "你的姓名",
