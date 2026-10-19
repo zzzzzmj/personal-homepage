@@ -52,6 +52,30 @@
     }));
   }
 
+  const courseList = document.querySelector('[data-courses]');
+  const courses = config.profile?.courses;
+  if (courseList && Array.isArray(courses) && courses.length) {
+    courseList.replaceChildren(...courses.map((course, index) => {
+      const entry = typeof course === 'string' ? { name: course } : course;
+      const card = document.createElement('article');
+      const number = document.createElement('span');
+      const content = document.createElement('div');
+      const name = document.createElement('h3');
+      const semester = document.createElement('p');
+      const note = document.createElement('small');
+      card.className = 'course-card';
+      number.textContent = String(index + 1).padStart(2, '0');
+      name.textContent = entry.name || '课程名称';
+      semester.textContent = entry.semester || '研究生阶段';
+      note.textContent = entry.note || '主修课程';
+      content.append(semester, name, note);
+      card.append(number, content);
+      return card;
+    }));
+    const courseCount = document.querySelector('[data-course-count]');
+    if (courseCount) courseCount.textContent = String(courses.length).padStart(2, '0');
+  }
+
   document.querySelectorAll('[data-year]').forEach((node) => {
     node.textContent = new Date().getFullYear();
   });

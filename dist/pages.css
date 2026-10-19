@@ -101,6 +101,19 @@
 .education-card dd { margin: 0; font-size: .78rem; font-weight: 700; }
 .education-link { position: absolute; right: 24px; bottom: 21px; color: var(--blue); font-size: .68rem; font-style: normal; }
 
+.courses-section { overflow: hidden; }
+.courses-intro { margin: -13px 0 25px; color: var(--muted-blue); font-size: .82rem; }
+.course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.course-card { position: relative; min-height: 134px; display: grid; grid-template-columns: 42px 1fr; gap: 15px; align-items: start; overflow: hidden; padding: 20px; border: 1px solid var(--line-soft); border-radius: 15px; background: linear-gradient(145deg, #fbfcfe, #f4f8ff); transition: transform .2s, border-color .2s, box-shadow .2s; }
+.course-card::after { content: ""; position: absolute; right: -28px; bottom: -38px; width: 90px; height: 90px; border: 1px solid rgba(47,111,228,.12); border-radius: 50%; box-shadow: 0 0 0 16px rgba(47,111,228,.025); }
+.course-card:hover { transform: translateY(-3px); border-color: #bed1eb; box-shadow: 0 12px 25px rgba(38,74,119,.08); }
+.course-card > span { display: grid; width: 38px; height: 38px; place-items: center; color: var(--blue); border-radius: 11px; background: var(--blue-soft); font-size: .68rem; font-weight: 850; }
+.course-card > div { position: relative; z-index: 1; min-width: 0; }
+.course-card p { margin: 1px 0 8px; color: #8b98a9; font-size: .62rem; letter-spacing: .06em; }
+.course-card h3 { margin: 0 0 10px; color: var(--navy); font-size: 1rem; line-height: 1.4; }
+.course-card small { color: var(--blue); font-size: .66rem; }
+.course-placeholder { border-style: dashed; }
+
 .award-mark { display: grid; width: 52px; height: 52px; place-items: center; color: #d59d25; border-radius: 50%; background: #fff6dd; font: 1.1rem/1 system-ui, sans-serif; }
 .honor-list { padding: 0; margin: 0; border-top: 1px solid var(--line-soft); list-style: none; }
 .honor-list li { display: grid; grid-template-columns: 80px 1fr; gap: 18px; padding: 21px 10px; border-bottom: 1px solid var(--line-soft); }
@@ -142,6 +155,7 @@
   .profile-photo img { min-height: 0; height: auto; }
   .academic-section { padding: 27px 22px 30px; border-radius: 16px; }
   .fact-grid { grid-template-columns: 1fr 1fr; }
+  .course-grid { grid-template-columns: 1fr; }
   .education-link { position: static; display: block; margin-top: 15px; }
   .contact-section { align-items: flex-start; flex-direction: column; padding: 30px 24px; }
   .contact-actions { width: 100%; }

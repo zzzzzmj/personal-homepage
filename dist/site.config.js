@@ -24,6 +24,7 @@ window.PORTFOLIO_CONFIG = {
     graduateMajor: "智能科学与技术",
     graduatePeriod: "2025-2028",
     graduateRole: "",
+    courses: [],
     email: "1575184728@qq.com",
     emailLink: "mailto:1575184728@qq.com",
     githubUrl: "https://github.com/zzzzzmj",

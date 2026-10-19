@@ -52,6 +52,10 @@ window.PORTFOLIO_CONFIG = {
     graduateMajor: "研究生专业或研究方向",
     graduatePeriod: "时间",
     graduateRole: "研究生班级职务",
+    courses: [
+      { name: "课程名称", semester: "研一上", note: "核心课程" },
+      { name: "另一门课程", semester: "研一下", note: "专业选修" }
+    ],
     email: "你的邮箱",
     emailLink: "mailto:你的邮箱",
     githubUrl: "你的 GitHub 地址",
