@@ -9,12 +9,18 @@ window.PORTFOLIO_CONFIG = {
   profile: {
     name: "",
     direction: "",
+    biography: "",
     undergraduateSchool: "",
     undergraduateUrl: "",
+    undergraduateMajor: "",
+    undergraduatePeriod: "",
     graduateSchool: "",
     graduateUrl: "",
+    graduateMajor: "",
+    graduatePeriod: "",
     email: "",
-    githubUrl: "",
+    emailLink: "",
+    githubUrl: "https://github.com/zzzzzmj",
     awards: []
   }
 };

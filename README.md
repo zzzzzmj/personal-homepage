@@ -14,6 +14,7 @@ personal-homepage/
 │   ├── index.html                # 首页
 │   ├── home.css                  # 首页样式
 │   ├── styles.css                # 详情页公共样式
+│   ├── pages.css                 # 个人信息页与算法目录样式
 │   ├── site.config.js            # 个人信息与首页文字配置
 │   ├── app.js                    # 公共交互
 │   ├── about.html                # 个人信息页
@@ -38,13 +39,21 @@ window.PORTFOLIO_CONFIG = {
   profile: {
     name: "你的姓名",
     direction: "你的研究或工作方向",
+    biography: "个人简介",
     undergraduateSchool: "本科院校",
     undergraduateUrl: "https://学校官网",
+    undergraduateMajor: "本科专业",
+    undergraduatePeriod: "时间",
     graduateSchool: "研究生院校",
     graduateUrl: "https://学校官网",
+    graduateMajor: "研究生专业或研究方向",
+    graduatePeriod: "时间",
     email: "你的邮箱",
+    emailLink: "mailto:你的邮箱",
     githubUrl: "你的 GitHub 地址",
-    awards: []
+    awards: [
+      { year: "2026", title: "奖项名称", detail: "奖项级别或排名" }
+    ]
   }
 };
 ```

@@ -7,6 +7,34 @@
     if (typeof value === 'string' && value.trim()) node.textContent = value;
   });
 
+  document.querySelectorAll('[data-config-href]').forEach((node) => {
+    const value = node.dataset.configHref
+      .split('.')
+      .reduce((current, key) => current && current[key], config);
+    if (typeof value === 'string' && value.trim()) {
+      node.href = value;
+      node.removeAttribute('data-placeholder');
+    }
+  });
+
+  const awardList = document.querySelector('[data-awards]');
+  if (awardList && Array.isArray(config.profile?.awards) && config.profile.awards.length) {
+    awardList.replaceChildren(...config.profile.awards.map((award) => {
+      const item = document.createElement('li');
+      const year = document.createElement('span');
+      const content = document.createElement('p');
+      const title = document.createElement('b');
+      const detail = document.createElement('small');
+      const entry = typeof award === 'string' ? { title: award } : award;
+      year.textContent = entry.year || '—';
+      title.textContent = entry.title || '';
+      detail.textContent = entry.detail || '';
+      content.append(title, detail);
+      item.append(year, content);
+      return item;
+    }));
+  }
+
   document.querySelectorAll('[data-year]').forEach((node) => {
     node.textContent = new Date().getFullYear();
   });

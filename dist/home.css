@@ -70,8 +70,14 @@ a { color: inherit; text-decoration: none; }
   background: rgba(224, 236, 245, .72);
   box-shadow: 0 10px 30px rgba(45, 72, 94, .16);
 }
-.avatar svg { width: 78%; height: 78%; }
-.avatar circle, .avatar path { fill: #93abc0; }
+.avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 46% 50%;
+  transform: scale(1.03);
+}
 
 h1 {
   margin: 27px 0 0;
